@@ -5,12 +5,12 @@ void Klient::Przegladaj_pokoje() {
 	throw "Not yet implemented";
 }
 
-boolean Klient::Logowanie(int id_klienta, String haslo) {
+boolean Klient::Logowanie(int id_klienta, String haslo, int id_klienta, String haslo) {
 	// TODO - implement Klient::Logowanie
 	throw "Not yet implemented";
 }
 
-boolean Klient::Potwierdz_rezerwacje(int id_rezerwacji) {
+boolean Klient::Potwierdz_rezerwacje(int id_rezerwacji, int id_rezerwacji) {
 	// TODO - implement Klient::Potwierdz_rezerwacje
 	throw "Not yet implemented";
 }

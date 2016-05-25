@@ -20,12 +20,12 @@ boolean Recepcjonista::Dodaj_rezerwacje() {
 	throw "Not yet implemented";
 }
 
-boolean Recepcjonista::Edytuj_rezerwacje(int id_rezerwacji) {
+boolean Recepcjonista::Edytuj_rezerwacje(int id_rezerwacji, int id_rezerwacji) {
 	// TODO - implement Recepcjonista::Edytuj_rezerwacje
 	throw "Not yet implemented";
 }
 
-int Recepcjonista::Oblicz_koszt_rezerwacji(int id_rezerwacji) {
+int Recepcjonista::Oblicz_koszt_rezerwacji(int id_rezerwacji, int id_rezerwacji) {
 	// TODO - implement Recepcjonista::Oblicz_koszt_rezerwacji
 	throw "Not yet implemented";
 }
@@ -35,7 +35,7 @@ boolean Recepcjonista::Dodaj_klienta() {
 	throw "Not yet implemented";
 }
 
-boolean Recepcjonista::Usun_rezerwacje(int id_rezerwacji) {
+boolean Recepcjonista::Usun_rezerwacje(int id_rezerwacji, int id_rezerwacji) {
 	// TODO - implement Recepcjonista::Usun_rezerwacje
 	throw "Not yet implemented";
 }
