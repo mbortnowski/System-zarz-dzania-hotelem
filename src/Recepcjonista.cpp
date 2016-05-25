@@ -39,3 +39,8 @@ boolean Recepcjonista::Usun_rezerwacje(int id_rezerwacji, int id_rezerwacji) {
 	// TODO - implement Recepcjonista::Usun_rezerwacje
 	throw "Not yet implemented";
 }
+
+Recepcjonista::Recepcjonista() {
+	// TODO - implement Recepcjonista::Recepcjonista
+	throw "Not yet implemented";
+}

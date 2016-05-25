@@ -19,4 +19,6 @@ public:
 	void Przegladaj_pokoje();
 
 	boolean Dodaj_rezerwacje();
+
+	Klient();
 };

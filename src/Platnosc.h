@@ -5,4 +5,7 @@ private:
 	Date Data;
 	int Numer_konta;
 	string Typ;
+
+public:
+	Platnosc();
 };

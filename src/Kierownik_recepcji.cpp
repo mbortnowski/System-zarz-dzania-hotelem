@@ -9,3 +9,8 @@ boolean Kierownik_recepcji::Przegladaj_platnosci(int id_rezerwacji, int id_rezer
 	// TODO - implement Kierownik_recepcji::Przegladaj_platnosci
 	throw "Not yet implemented";
 }
+
+Kierownik_recepcji::Kierownik_recepcji() {
+	// TODO - implement Kierownik_recepcji::Kierownik_recepcji
+	throw "Not yet implemented";
+}

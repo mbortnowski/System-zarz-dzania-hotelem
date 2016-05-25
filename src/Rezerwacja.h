@@ -6,5 +6,7 @@ private:
 	Date Data_stop;
 	int Koszt;
 	boolean Potwierdzenie;
-	int Ilosc_pokoi;
+
+public:
+	Rezerwacja();
 };

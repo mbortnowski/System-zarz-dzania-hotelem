@@ -10,4 +10,6 @@ public:
 	boolean Wystaw_fakture(int id_rezerwacji);
 
 	boolean Przegladaj_platnosci(int id_rezerwacji);
+
+	Kierownik_recepcji();
 };

@@ -22,4 +22,6 @@ public:
 	boolean Usun_rezerwacje(int id_rezerwacji);
 
 	int Oblicz_koszt_rezerwacji(int id_rezerwacji);
+
+	Recepcjonista();
 };

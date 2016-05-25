@@ -8,4 +8,6 @@ private:
 
 public:
 	boolean Zmien_status_pokoju(int id_pokoju);
+
+	Pracownik_sluzby_pieter();
 };

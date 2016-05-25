@@ -19,3 +19,8 @@ boolean Klient::Dodaj_rezerwacje() {
 	// TODO - implement Klient::Dodaj_rezerwacje
 	throw "Not yet implemented";
 }
+
+Klient::Klient() {
+	// TODO - implement Klient::Klient
+	throw "Not yet implemented";
+}

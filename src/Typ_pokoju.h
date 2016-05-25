@@ -5,4 +5,7 @@ private:
 	int Miejsc;
 	int Cena;
 	String Opis;
+
+public:
+	Typ_pokoju();
 };

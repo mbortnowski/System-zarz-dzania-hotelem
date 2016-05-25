@@ -6,4 +6,7 @@ private:
 	int Pietro;
 	string Opis;
 	boolean Status;
+
+public:
+	Pokoj();
 };
