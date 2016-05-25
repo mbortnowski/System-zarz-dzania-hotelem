@@ -1,21 +1,8 @@
-#include <vector>
-using namespace std;
+class Typ_pokoju {
 
-#ifndef __Typ_pokoju_h__
-#define __Typ_pokoju_h__
-
-#include "Pokoj.h"
-
-class Pokoj;
-class Typ_pokoju;
-
-class Typ_pokoju
-{
-	private: int _iD;
-	private: int _miejsc;
-	private: int _cena;
-	private: String _opis;
-	public: std::vector<Pokoj*> _cechuje;
+private:
+	int ID;
+	int Miejsc;
+	int Cena;
+	String Opis;
 };
-
-#endif

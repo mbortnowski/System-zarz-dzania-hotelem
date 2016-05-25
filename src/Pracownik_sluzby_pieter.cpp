@@ -1,11 +1,6 @@
-#include <exception>
-#include <vector>
-using namespace std;
-
 #include "Pracownik_sluzby_pieter.h"
-#include "Pokoj.h"
 
-bool Pracownik_sluzby_pieter::zmien_status_pokoju(string aInt_1) {
+boolean Pracownik_sluzby_pieter::Zmien_status_pokoju(int id_pokoju) {
+	// TODO - implement Pracownik_sluzby_pieter::Zmien_status_pokoju
 	throw "Not yet implemented";
 }
-

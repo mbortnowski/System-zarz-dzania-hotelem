@@ -1,38 +1,25 @@
-#include <exception>
-#include <vector>
-using namespace std;
+class Recepcjonista {
 
-#ifndef __Recepcjonista_h__
-#define __Recepcjonista_h__
+private:
+	int ID;
+	String Imie;
+	String Nazwisko;
+	int Telefon;
 
-#include "Rezerwacja.h"
+public:
+	void Przegladaj_pokoje();
 
-class Rezerwacja;
-class Recepcjonista;
+	void Przegladaj_rezerwacje();
 
-class Recepcjonista
-{
-	private: int _iD;
-	private: String _imie;
-	private: String _nazwisko;
-	private: int _telefon;
-	public: std::vector<Rezerwacja*> _obs³uguje;
+	void Przegladaj_klientow();
 
-	public: void przegladaj_pokoje();
+	boolean Dodaj_rezerwacje();
 
-	public: void przegladaj_rezerwacje();
+	boolean Edytuj_rezerwacje(int id_rezerwacji);
 
-	public: void przegladaj_klientow();
+	int Oblicz_koszt_rezerwacji(int id_rezerwacji);
 
-	public: bool dodaj_klienta();
+	boolean Dodaj_klienta();
 
-	public: bool dodaj_rezerwacje();
-
-	public: bool edytuj_rezerwacje(int aId_rezerwacji);
-
-	public: bool usun_rezerwacje(int aId_rezerwacji);
-
-	public: int oblicz_koszt_rezerwacji(int aId_rezerwacji);
+	boolean Usun_rezerwacje(int id_rezerwacji);
 };
-
-#endif

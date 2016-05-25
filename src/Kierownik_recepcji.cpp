@@ -1,14 +1,11 @@
-#include <exception>
-using namespace std;
-
 #include "Kierownik_recepcji.h"
-#include "Recepcjonista.h"
 
-bool Kierownik_recepcji::wystaw_fakture(int aId_rezerwacji) {
+boolean Kierownik_recepcji::Wystaw_fakture(int id_rezerwacji) {
+	// TODO - implement Kierownik_recepcji::Wystaw_fakture
 	throw "Not yet implemented";
 }
 
-bool Kierownik_recepcji::przegladaj_platnosci(int aId_rezerwacji) {
+boolean Kierownik_recepcji::Przegladaj_platnosci(int id_rezerwacji) {
+	// TODO - implement Kierownik_recepcji::Przegladaj_platnosci
 	throw "Not yet implemented";
 }
-

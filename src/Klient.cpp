@@ -1,25 +1,21 @@
-#include <exception>
-#include <string>
-#include <vector>
-using namespace std;
-
 #include "Klient.h"
-#include "Recepcjonista.h"
-#include "Rezerwacja.h"
 
-bool Klient::logowanie(int aId_klienta, String aHaslo) {
+void Klient::Przegladaj_pokoje() {
+	// TODO - implement Klient::Przegladaj_pokoje
 	throw "Not yet implemented";
 }
 
-bool Klient::potwierdz_rezerwacje(int aId_rezerwacji) {
+boolean Klient::Logowanie(int id_klienta, String haslo) {
+	// TODO - implement Klient::Logowanie
 	throw "Not yet implemented";
 }
 
-void Klient::przegladaj_pokoje() {
+boolean Klient::Potwierdz_rezerwacje(int id_rezerwacji) {
+	// TODO - implement Klient::Potwierdz_rezerwacje
 	throw "Not yet implemented";
 }
 
-bool Klient::dodaj_rezerwacje() {
+boolean Klient::Dodaj_rezerwacje() {
+	// TODO - implement Klient::Dodaj_rezerwacje
 	throw "Not yet implemented";
 }
-
