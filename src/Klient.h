@@ -1,24 +1,43 @@
-class Klient {
+#pragma once
+#ifndef KLIENT_H
+#define KLIENT_H
 
+#include <iostream>
+#include <string>
+#include <ctime>
+#include <vector>
+
+#include "Rezerwacja.h"
+using namespace std;
+
+class Klient {
 private:
+
+	static int current_id;
+
 	int ID;
 	string Imie;
-	String Nazwisko;
-	String Adres;
+	string Nazwisko;
+	string Adres;
 	int Telefon;
-	boolean Zameldowany;
-	Date Data_zameldowania;
+	bool Zameldowany;
+	struct tm Data_zameldowania;
 	string Haslo;
 	string Firma;
 
-public:
-	boolean Logowanie(int id_klienta, String haslo);
+	vector < Rezerwacja > Rezerwacje; //Agregowanie Rezerwacji
 
-	boolean Potwierdz_rezerwacje(int id_rezerwacji);
+
+public:
+	bool Logowanie(int id_klienta, string haslo);
+
+	bool Potwierdz_rezerwacje(int id_rezerwacji);
 
 	void Przegladaj_pokoje();
 
-	boolean Dodaj_rezerwacje();
+	bool Dodaj_rezerwacje();
 
 	Klient();
+	Klient(string I, string N, string A, int T, bool Z, tm DZ, string H, string F);
 };
+#endif

@@ -1,4 +1,6 @@
+#include "stdafx.h"
 #include "Platnosc.h"
+
 
 Platnosc::Platnosc() {
 	// TODO - implement Platnosc::Platnosc

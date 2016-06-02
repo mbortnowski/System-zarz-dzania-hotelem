@@ -1,6 +1,16 @@
+#include "stdafx.h"
 #include "Pokoj.h"
 
+int Pokoj::current_id = 0;
+
+
 Pokoj::Pokoj() {
-	// TODO - implement Pokoj::Pokoj
-	throw "Not yet implemented";
+	ID = current_id++;
+
+
+}
+Pokoj::Pokoj(int N, int P, string O, bool S) {
+	ID = current_id++;
+
+
 }

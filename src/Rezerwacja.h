@@ -1,12 +1,22 @@
+#pragma once
+#ifndef REZERWACJA_H
+#define REZERWACJA_H
+
+#include <iostream>
+#include <string>
+#include <ctime>
+using namespace std;
+
 class Rezerwacja {
 
 private:
 	int ID;
-	Date Data_start;
-	Date Data_stop;
+	struct tm Data_start;
+	struct tm Data_stop;
 	int Koszt;
-	boolean Potwierdzenie;
+	string Potwierdzenie;
 
 public:
 	Rezerwacja();
 };
+#endif
