@@ -1,8 +1,9 @@
 
+
 #include "stdafx.h"
 #include "Klient.h"
 
-int Klient::current_id=0;
+int Klient::current_id=1;
 
 void Klient::Przegladaj_pokoje() {
 	// TODO - implement Klient::Przegladaj_pokoje
@@ -98,4 +99,26 @@ Klient::Klient(string I, string N, string A, int T, bool Z, tm DZ, string H, str
 	}
 	Haslo=H;
 	Firma = F;
+};
+
+void Klient::get() {
+
+	cout << "ID: " << ID << endl;
+	cout << "Imie: " << Imie << endl;
+	cout << "Nazwisko: " << Nazwisko << endl;
+	cout << "Adres: " << Adres << endl;
+	cout << "Telefon: " << Telefon << endl;
+	cout << "Firma: " << Firma << endl;
+	cout << "Zameldowany: " << Zameldowany << endl;
+
+	if (Zameldowany) {
+		cout << "Data zameldowania: " << Data_zameldowania.tm_year <<"/"<<Data_zameldowania.tm_mon<<"/"<<Data_zameldowania.tm_mday << endl;
+	}
+
+	cout << "Haslo: " << Haslo << endl;
+	
+}
+
+int Klient::getID() {
+	return ID;
 };

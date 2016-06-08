@@ -22,5 +22,7 @@ private:
 public:
 	Pokoj ();
 	Pokoj (int N, int P, string O, bool S);
+	void get();
+	int getID();
 };
 #endif

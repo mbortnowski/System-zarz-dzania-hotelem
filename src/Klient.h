@@ -2,9 +2,9 @@
 #ifndef KLIENT_H
 #define KLIENT_H
 
+
 #include <iostream>
 #include <string>
-#include <ctime>
 #include <vector>
 
 #include "Rezerwacja.h"
@@ -39,5 +39,8 @@ public:
 
 	Klient();
 	Klient(string I, string N, string A, int T, bool Z, tm DZ, string H, string F);
+
+	void get();
+	int getID();
 };
 #endif
