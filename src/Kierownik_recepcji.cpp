@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Kierownik_recepcji.h"
 
-int Kierownik_recepcji::current_id = 0;
+int Kierownik_recepcji::current_id = 1;
 
 bool Kierownik_recepcji::Wystaw_fakture(int id_rezerwacji) {
 	// TODO - implement Kierownik_recepcji::Wystaw_fakture

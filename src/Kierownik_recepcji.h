@@ -4,7 +4,7 @@
 
 #include "stdafx.h"
 #include <iostream>
-#include "string.h"
+#include <string>
 #include <ctime>
 using namespace std;
 

@@ -1,11 +1,15 @@
 #pragma once
 #ifndef KLIENT_H
 #define KLIENT_H
+//#define NDEBUG 
 
 
 #include <iostream>
 #include <string>
 #include <vector>
+
+
+#include <assert.h> 
 
 #include "Rezerwacja.h"
 using namespace std;
@@ -30,11 +34,8 @@ private:
 
 public:
 	bool Logowanie(int id_klienta, string haslo);
-
 	bool Potwierdz_rezerwacje(int id_rezerwacji);
-
 	void Przegladaj_pokoje();
-
 	bool Dodaj_rezerwacje();
 
 	Klient();
@@ -42,5 +43,6 @@ public:
 
 	void get();
 	int getID();
+	void getRes();
 };
 #endif

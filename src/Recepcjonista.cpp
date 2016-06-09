@@ -2,44 +2,54 @@
 #include "stdafx.h"
 #include "Recepcjonista.h"
 
-int Recepcjonista::current_id=0;
+int Recepcjonista::current_id=1;
 
-void Recepcjonista::Przegladaj_pokoje(vector <Pokoj> Pokoje) {
-	// TODO - implement Recepcjonista::Przegladaj_pokoje
-	throw "Not yet implemented";
+void Recepcjonista::Przegladaj_pokoje(vector <Pokoj *> Pokoje) {
+
+	for (unsigned int ik = 0; ik < Pokoje.size(); ik++)
+	{
+		Pokoje[ik]->get();
+	}
+	system("pause");
 }
 
-void Recepcjonista::Przegladaj_rezerwacje(vector <Klient> Lista) {
-	// TODO - implement Recepcjonista::Przegladaj_rezerwacje
-	throw "Not yet implemented";
+void Recepcjonista::Przegladaj_rezerwacje(vector <Klient *> Lista) {
+	for (unsigned int ik = 0; ik < Lista.size(); ik++)
+	{
+		Lista[ik]->getRes();
+	}
+	system("pause");
 }
 
-void Recepcjonista::Przegladaj_klientow(vector <Klient> Lista) {
-	// TODO - implement Recepcjonista::Przegladaj_klientow
-	throw "Not yet implemented";
+void Recepcjonista::Przegladaj_klientow(vector <Klient *> Lista) {
+	for (unsigned int ik = 0; ik < Lista.size(); ik++)
+	{
+		Lista[ik]->get();
+	}
+	system("pause");
 }
 
-bool Recepcjonista::Dodaj_rezerwacje(vector <Klient> Lista) {
+bool Recepcjonista::Dodaj_rezerwacje(vector <Klient *> Lista) {
 	// TODO - implement Recepcjonista::Dodaj_rezerwacje
 	throw "Not yet implemented";
 }
 
-bool Recepcjonista::Edytuj_rezerwacje(int id_rezerwacji, vector <Klient> Lista) {
+bool Recepcjonista::Edytuj_rezerwacje(int id_rezerwacji, vector <Klient *> Lista) {
 	// TODO - implement Recepcjonista::Edytuj_rezerwacje
 	throw "Not yet implemented";
 }
 
-int Recepcjonista::Oblicz_koszt_rezerwacji(int id_rezerwacji, vector <Klient> Lista) {
+int Recepcjonista::Oblicz_koszt_rezerwacji(int id_rezerwacji, vector <Klient *> Lista) {
 	// TODO - implement Recepcjonista::Oblicz_koszt_rezerwacji
 	throw "Not yet implemented";
 }
 
-bool Recepcjonista::Dodaj_klienta(vector <Klient> Lista) {
+bool Recepcjonista::Dodaj_klienta(vector <Klient *> Lista) {
 	// TODO - implement Recepcjonista::Dodaj_klienta
 	throw "Not yet implemented";
 }
 
-bool Recepcjonista::Usun_rezerwacje(int id_rezerwacji, vector <Klient> Lista) {
+bool Recepcjonista::Usun_rezerwacje(int id_rezerwacji, vector <Klient *> Lista) {
 	// TODO - implement Recepcjonista::Usun_rezerwacje
 	throw "Not yet implemented";
 }

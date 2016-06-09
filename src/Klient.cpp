@@ -2,6 +2,7 @@
 
 #include "stdafx.h"
 #include "Klient.h"
+#include <assert.h> 
 
 int Klient::current_id=1;
 
@@ -27,7 +28,7 @@ bool Klient::Dodaj_rezerwacje() {
 
 Klient::Klient() {
 
-	ID = current_id;
+	ID = current_id++;
 	string i, n, a, h, f;
 	int t;
 	int z;
@@ -35,21 +36,27 @@ Klient::Klient() {
 
 	cout << "Podaj Haslo:";
 	cin >> h;
+	//assert(cin.fail());
 
 	cout << "Imie: ";
 	cin >> i;
+	//assert(cin.fail());
 
 	cout << "Nazwisko: ";
 	cin >> n;
+	//assert (cin.fail());
 
 	cout << "Adres: ";
 	cin >> a;
+	//assert (cin.fail());
 
 	cout << "Firma: ";
 	cin >> f;
+	//assert ( cin.fail() );
 
 	cout << "Telefon: ";
 	cin >> t;
+	assert( cin.fail() && t > 99999);
 
 	cout << "Zameldowany(1) Niezameldowany(0) :";
 	cin >> z;
@@ -63,7 +70,11 @@ Klient::Klient() {
 		cout << "Rok: ";
 		cin >> y;
 
-		dz = { 0,0,0,d,m,y }; 
+		assert (d>0&&d<32);
+		assert(m>-1 && d<12);
+		assert(y>0);
+
+		dz = { 0,0,0,d,m-1,y-1900 }; 
 	}
 	else {
 		Zameldowany = false;
@@ -84,7 +95,7 @@ Klient::Klient() {
 }
 
 Klient::Klient(string I, string N, string A, int T, bool Z, tm DZ, string H, string F) {
-	ID = current_id;
+	ID = current_id++;
 	Imie = I;
 	Nazwisko = N;
 	Adres = A;
@@ -106,19 +117,31 @@ void Klient::get() {
 	cout << "ID: " << ID << endl;
 	cout << "Imie: " << Imie << endl;
 	cout << "Nazwisko: " << Nazwisko << endl;
+
+	if (Zameldowany) {
+		cout << "Data zameldowania(yyyy/mm/dd): " << Data_zameldowania.tm_year + 1900 << "/" << Data_zameldowania.tm_mon + 1 << "/" << Data_zameldowania.tm_mday << endl ;
+	}
+
 	cout << "Adres: " << Adres << endl;
 	cout << "Telefon: " << Telefon << endl;
 	cout << "Firma: " << Firma << endl;
 	cout << "Zameldowany: " << Zameldowany << endl;
+	cout << "-------------" << endl;
 
-	if (Zameldowany) {
-		cout << "Data zameldowania: " << Data_zameldowania.tm_year <<"/"<<Data_zameldowania.tm_mon<<"/"<<Data_zameldowania.tm_mday << endl;
-	}
 
-	cout << "Haslo: " << Haslo << endl;
+
+	//cout << "Haslo: " << Haslo << endl;
 	
 }
 
 int Klient::getID() {
 	return ID;
 };
+void Klient::getRes() {
+	for (unsigned int ik = 0; ik < Rezerwacje.size(); ik++)
+	{
+		cout << "ID klienta:" << ID<<endl;
+		Rezerwacje[ik].get();
+	}
+	system("pause");
+}

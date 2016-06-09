@@ -15,6 +15,8 @@ int main()
 
 	vector <Recepcjonista> ListaPracownikow;
 
+	Recepcjonista test("Micha³","Bortnowski",789456321);
+
 	Pokoj * P;
 	Klient * K;
 	
@@ -24,26 +26,20 @@ int main()
 		P = new Pokoj(K,(K%3)+1,"Pokoj",true);
 		ListaPokoi.push_back(P);
 	}
-	for (unsigned int ik = 0; ik < ListaPokoi.size(); ik++)
+	//////////////////////////////KLIENCI TESTOWI
+	for (unsigned int g = 0; g < 30; g++)
 	{
-		ListaPokoi[ik]->get();
-	}
-	system("pause");
-
-	
-	for (unsigned int j = 0;j < 1; j++)
-	{
-		K = new Klient();
+		struct tm DZ = { 0,0,0,0,0,0 };
+		K = new Klient ("Test","Testowy","ul testowa",1111111*g, 0, DZ,"Haslo","test sp zoo");
 		ListaKlientow.push_back(K);
 	}
 
-	system("pause");
-	system("cls");
 
-	for (unsigned int ij = 0; ij < ListaKlientow.size(); ij++)
-	{
-		ListaKlientow[ij]->get();
-	}
+	test.Przegladaj_pokoje(ListaPokoi);
+
+	test.Przegladaj_klientow(ListaKlientow);
+	Rezerwacja Res;
+
 
 	system("pause");
 
