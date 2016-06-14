@@ -59,3 +59,6 @@ void Pokoj::get() {
 int Pokoj::getID() {
 	return ID;
 };
+int Pokoj::getF() {
+	return Pietro;
+};

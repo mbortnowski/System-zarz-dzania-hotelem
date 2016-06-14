@@ -6,6 +6,8 @@
 #include <string>
 #include <ctime>
 #include <vector>
+#include "Klient.h"
+
 using namespace std;
 
 class Recepcjonista {
@@ -25,7 +27,7 @@ public:
 
 	void Przegladaj_klientow(vector <Klient *> Lista);
 
-	bool Dodaj_klienta(vector <Klient *> Lista);
+	void Dodaj_klienta(vector <Klient *> Lista);
 
 	bool Dodaj_rezerwacje(vector <Klient *> Lista);
 
@@ -35,6 +37,11 @@ public:
 
 	int Oblicz_koszt_rezerwacji(int id_rezerwacji, vector <Klient *> Lista);
 
+	void Znajdz_klienta (vector <Klient *> Lista);
+	void Znajdz_klienta2 (vector <Klient *> Lista);
+
+	void Znajdz_pokoj(vector <Pokoj *> Pokoje, int rID);
+	void Znajdz_pokoj2(vector <Pokoj *> Pokoje, int p);
 	Recepcjonista();
 	Recepcjonista(string I, string N, int T);
 };

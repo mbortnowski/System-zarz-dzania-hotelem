@@ -24,5 +24,6 @@ public:
 	Pokoj (int N, int P, string O, bool S);
 	void get();
 	int getID();
+	int getF();
 };
 #endif

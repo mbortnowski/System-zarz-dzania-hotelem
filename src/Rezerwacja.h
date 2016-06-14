@@ -20,11 +20,17 @@ private:
 	int Koszt;
 	bool Potwierdzenie;
 
-	vector < Pokoj > Pokoje;
+	vector < Pokoj *> Pokoje;
 
 public:
 	Rezerwacja();
 	Rezerwacja(struct tm start, struct tm stop);
 	void get();
+
+	void Dodaj_pokoje(vector <Pokoj *> Lista);
+	void Wyswietl_pokoje();
+
+	bool Potwierdz_rezerwacje();
+	int getID();
 };
 #endif

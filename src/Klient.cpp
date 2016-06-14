@@ -12,18 +12,68 @@ void Klient::Przegladaj_pokoje() {
 }
 
 bool Klient::Logowanie(int id_klienta, string haslo) {
-	// TODO - implement Klient::Logowanie
-	throw "Not yet implemented";
+
+	if ((id_klienta == ID) && (haslo == Haslo)) { 
+		cout << "Logowanie udane" << endl;
+		system("pause");
+		return true;
+	}
+	else
+	{
+		cout << "Logowanie nieudane"<< endl;
+		system("pause");
+		return false;
+	}
 }
 
 bool Klient::Potwierdz_rezerwacje(int id_rezerwacji) {
-	// TODO - implement Klient::Potwierdz_rezerwacje
-	throw "Not yet implemented";
+
+	int cID = id_rezerwacji;
+
+
+
+	for (unsigned int K = 0; K < Rezerwacje.size(); K++)
+	{
+		if (Rezerwacje[K]->getID() == cID) {
+			Rezerwacje[K]->Potwierdz_rezerwacje();
+			return true;
+		}
+	}
+	cout << "Brak rezerwacji" << endl; 
+	return false;
 }
 
 bool Klient::Dodaj_rezerwacje() {
-	// TODO - implement Klient::Dodaj_rezerwacje
-	throw "Not yet implemented";
+
+	Rezerwacja * R;
+	R = new Rezerwacja();
+
+	Rezerwacje.push_back(R);
+	
+
+	cout << "Dodano rezerwacje dla klienta o ID " << ID << endl;
+	system("pause");
+
+
+	return true;
+
+
+	//Warunek o op³aceniu poprzedniej!
+
+}
+
+bool Klient::Dodaj_rezerwacje(struct tm start, struct tm stop) {
+
+	Rezerwacja * R;
+	R = new Rezerwacja(start,stop);
+
+	Rezerwacje.push_back(R);
+	cout << "Dodano rezerwacje dla klienta o ID " << ID  <<endl;
+	return true;
+
+
+	//Warunek o op³aceniu poprzedniej!
+
 }
 
 Klient::Klient() {
@@ -56,7 +106,7 @@ Klient::Klient() {
 
 	cout << "Telefon: ";
 	cin >> t;
-	assert( cin.fail() && t > 99999);
+	assert(t < 999999999);assert(t > 99999);
 
 	cout << "Zameldowany(1) Niezameldowany(0) :";
 	cin >> z;
@@ -89,7 +139,7 @@ Klient::Klient() {
 	Telefon = t;
 	Data_zameldowania = dz;
 	
-	cout << "Dodano klienta";
+	cout << "Dodano klienta" << endl;
 
 
 }
@@ -141,7 +191,82 @@ void Klient::getRes() {
 	for (unsigned int ik = 0; ik < Rezerwacje.size(); ik++)
 	{
 		cout << "ID klienta:" << ID<<endl;
-		Rezerwacje[ik].get();
+		Rezerwacje[ik]->get();
+	}
+	
+}
+
+string Klient::getLName()
+{
+	return Nazwisko;
+}
+string Klient::getFName()
+{
+	return Imie;
+}
+
+void Klient::Dodaj_pokoje(vector <Pokoj *> Lista, int id_rezerwacji) {
+	
+	if (Rezerwacje.size() == 0) { return; };
+
+
+	for (unsigned int K = 0; K < Rezerwacje.size(); K++)
+	{
+		if (Rezerwacje[K]->getID() == id_rezerwacji) {
+			Rezerwacje[K]->Dodaj_pokoje(Lista);
+		}
+		else
+		{
+			cout << "Nie znaleziono rezerwacji" << endl<<endl;
+		}
+	}
+
+}
+
+
+void Klient::Przegladaj_rezerwacje(){
+
+	for (unsigned int K = 0; K < Rezerwacje.size(); K++)
+	{		
+		Rezerwacje[K]->get();
+		
 	}
 	system("pause");
+}
+
+bool Klient::zamelduj() {
+	if (Zameldowany == false)
+	{
+		
+
+		int d, m, y;
+		cout << "Dzien: ";
+		cin >> d;
+		cout << "Miesiac: ";
+		cin >> m;
+		cout << "Rok: ";
+		cin >> y;
+
+		assert(d>0 && d<32);
+		assert(m>-1 && d<12);
+		assert(y>0);
+		struct tm dz = { 0,0,0,d,m - 1,y - 1900 };
+
+		Zameldowany = true;
+		Data_zameldowania = dz;
+
+		cout << "Zameldowane goscia o ID:" << ID << endl;
+		cout << "Data zameldowania(yyyy/mm/dd): " << Data_zameldowania.tm_year + 1900 << "/" << Data_zameldowania.tm_mon + 1 << "/" << Data_zameldowania.tm_mday << endl;
+		system("pause");
+		return true;
+
+	}
+	else
+	{
+		
+		cout << "Gosc o id " << ID << " jest juz zameldowany" << endl;
+		system("pause");
+		return false;
+	}
+
 }

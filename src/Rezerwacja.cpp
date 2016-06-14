@@ -4,6 +4,7 @@
 int Rezerwacja::current_id = 1;
 
 Rezerwacja::Rezerwacja() {
+
 	ID = current_id++;
 	bool pot;
 	struct tm start;
@@ -41,7 +42,7 @@ Rezerwacja::Rezerwacja() {
 	time_t a = mktime(&start);
 	time_t b = mktime(&stop);
 	double difference = difftime(b, a) / (60 * 60 * 24);
-
+	cout << "ID: " << ID << endl;
 	cout << "Data start(yyyy/mm/dd): " << 1900+start.tm_year << "/" << start.tm_mon+1 << "/" << start.tm_mday << endl;
 	cout << "Data stop(yyyy/mm/dd): " << 1900+stop.tm_year << "/" << stop.tm_mon+1 << "/" << stop.tm_mday << endl;
 	cout << "Ilosc dni: " << difference << endl;
@@ -71,18 +72,72 @@ Rezerwacja::Rezerwacja() {
 }
 Rezerwacja::Rezerwacja(struct tm start, struct tm stop) {
 
-
+	ID = current_id++;
 	time_t a = mktime(&start);
 	time_t b = mktime(&stop);
 	double difference = difftime(b, a) / (60 * 60 * 24);
-
+	cout << "ID: " << ID << endl;
 	cout << "Data start(yyyy/mm/dd): " << 1900 + start.tm_year << "/" << start.tm_mon + 1 << "/" << start.tm_mday << endl;
 	cout << "Data stop(yyyy/mm/dd): " << 1900 + stop.tm_year << "/" << stop.tm_mon + 1 << "/" << stop.tm_mday << endl;
 	cout << "Ilosc dni: " << difference << endl;
 
-	assert(difference< 0);
+	assert(difference > 0);
+
 	Data_start = start;
 	Data_stop = stop;
+}
+
+
+void Rezerwacja::Dodaj_pokoje(vector <Pokoj *> Lista) {
+	int ster = 1;
+	int pID;
+	while (ster==1)
+	{
+		cout << "Podaj ID pokoju: ";
+		cin >> pID;
+
+		if (pID > Lista.size() || pID==0) { cout << "Bledne ID" << endl;return; }
+
+		Pokoje.push_back( Lista[pID-1] );
+
+		cout << "Czy chcesz dodac kolejny pokoj? (1-tak, 0-nie): ";
+		cin >> ster;
+	}
+
+	cout << "Dodano pokoj/e do rezerwacji"<<endl;
+	system("pause");
+
+}
+
+
+
+
+
+void Rezerwacja::Wyswietl_pokoje() {
+
+	for (unsigned int ik = 0; ik < Pokoje.size(); ik++)
+	{
+		Pokoje[ik]->get();
+	}
+	system("pause");
+
+}
+bool Rezerwacja::Potwierdz_rezerwacje() {
+	if (Potwierdzenie == false) 
+	{
+		Potwierdzenie = true; return true; 
+
+		cout << "Potwierdzono rezerwacje o ID:" << ID << endl;
+		system("pause");
+	
+	}
+	else
+	{
+		return false;
+		cout << "Rezerwacja o id " << ID <<" jest juz potwierdzona"<< endl;
+		system("pause");
+	}
+
 }
 void Rezerwacja::get() {
 
@@ -97,5 +152,8 @@ void Rezerwacja::get() {
 	cout << "Data start(yyyy/mm/dd): " << 1900 + Data_start.tm_year << "/" << Data_start.tm_mon + 1 << "/" << Data_start.tm_mday << endl;
 	cout << "Data stop(yyyy/mm/dd): " << 1900 + Data_stop.tm_year << "/" << Data_stop.tm_mon + 1 << "/" << Data_stop.tm_mday << endl;
 	cout << "Ilosc dni: " << difference << endl;
-
+	cout << "-------------" << endl;
 };
+int Rezerwacja::getID() { 
+	return ID; 
+}
