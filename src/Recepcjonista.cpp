@@ -152,3 +152,12 @@ Recepcjonista::Recepcjonista(string I,string N, int T) {
 	ID = current_id++;
 
 }
+
+void Recepcjonista::Znajdz_rezerwacje(vector <Klient *> Lista, int rID) {
+	if (Lista.size()==0) { return; }
+
+	for (unsigned int ik = 0; ik < Lista.size(); ik++)
+	{
+		Lista[ik]->Znajdz_rezerwacje(rID);
+	}
+}

@@ -42,6 +42,9 @@ public:
 
 	void Znajdz_pokoj(vector <Pokoj *> Pokoje, int rID);
 	void Znajdz_pokoj2(vector <Pokoj *> Pokoje, int p);
+
+	void Znajdz_rezerwacje (vector <Klient *> Lista, int rID);
+
 	Recepcjonista();
 	Recepcjonista(string I, string N, int T);
 };
